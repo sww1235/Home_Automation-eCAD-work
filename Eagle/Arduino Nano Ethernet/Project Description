@@ -1,0 +1,32 @@
+The project is composed of 2 custom boards and an arduino nano 
+(may be a custom version that does not have a USB port(undecided)).
+
+Board 1 is the user interface which contains 8 RGB surface mount LEDs and
+8 conductive pads for switches. It also contains the input multiplier
+(wire/I2C) and shift registers (SPI) that drive the LEDS and buttons.
+It communicates with the other board via an 8 pin header and ribbon cable.
+
+Board 2 is a customized version of the Arduino Ethernet Shield that does not
+have an SD card slot. It also has a Power Over Ethernet (POE) module. This board has
+a socket for the arduino nano to mount in, as well as a matching header to
+connect board 1. It distributes the power from the POE module to the devices that
+require it. This is the only board that would techically qualify as a shield or
+daughterboard.
+
+
+SDA - A4 - 4
+
+SCL-A5 - 3
+
+SPICLK(CLKLED) - D13 - 8
+
+Slave Select for LED shift
+registers (LATCH) - D8 - 6
+
+SPI Data - D11 - 7
+
+GND - GND - 1
+
+5V-5V - 2
+
+Use on board - Arduino Pin - Header Pin
